@@ -1,48 +1,28 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <title>
-        Factorial
-    </title>
-</head>
-
-<body style="text-align:center;">
-
-    <h1 style="color:green;">
-        Factorial of a number
-    </h1>
-    
-    <p id="Find" style="font-size: 15px; font-weight: bold;">
-    </p>
-
-    <button onclick="find()">
-        Click Here
-    </button>
-
-    <p id="result" style="color:green; font-size: 20px; font-weight: bold;">
-    </p>
-
+  <head>
+    <meta charset="utf-8">
+    <title>k.prathibha</title>
+    <link rel="stylesheet" href="styles.css">
     <script>
-        var up = document.getElementById('find');
-        var down = document.getElementById('result');
-        var n = 5
-
-        up.innerHTML = "Click on the button to calculate"
-            + " the factorial of n.<br>n = " + n;
-
-        function Factorial(n) {
-            var ans = 1;
-
-            for (var i = 2; i <= n; i++)
-                ans = ans * i;
-            return ans;
+        let ans=()=>{
+            var n=parseInt(document.getElementById("num").value);
+            var ans=1;
+            for(let i=1;i<=n;i++)
+            ans=ans*i;
+            document.getElementById("fact").value=ans;
         }
-
-        function find() {
-            down.innerHTML = Factorial(n);
+        function calc(){
+            ans();
         }
     </script>
-</body>
-
+  </head>
+  <body>
+    <div class="header">
+        <div class="header-logo">k.prathibha</div>
+    </div>
+    Enter a number <input id='num' type='text'><br><br><hr>
+    Factorial<span>     </span><input id='fact' type='text'><br><br>
+    <button onclick="calc()" width=50%>Find</button>
+  </body>
 </html>
